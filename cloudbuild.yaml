@@ -1,38 +1,27 @@
 steps:
-
+  
   - name: 'gcr.io/cloud-builders/gcloud'
     id: 'Create Compute Engine Instance'
     args:
       - 'compute'
       - 'instances'
       - 'create'
-      - 'gcp-exercise-test' 
-      - '--zone=us-central1-f'  
-      - '--machine-type=n1-standard-2' 
-      - '--image-family=windows-server-2022'  
+      - 'gcp-exercise'          
+      - '--zone=us-central1-a'         
+      - '--machine-type=n1-standard-2'  
+      - '--image-family=windows-2019'   
       - '--image-project=windows-cloud' 
-      - '--boot-disk-size=50GB'  
-      - '--boot-disk-type=pd-standard' 
+      - '--boot-disk-size=50GB'         
+      - '--boot-disk-type=pd-standard'  
+      - '--metadata=windows-startup-script-ps1=Add-LocalUser -Name "admin_user" -Password (ConvertTo-SecureString "AdminPassword123!" -AsPlainText -Force); Add-LocalGroupMember -Group "Administrators" -Member "admin_user"'
       - '--tags=http-server,https-server'  
 
-  
-  - name: 'gcr.io/cloud-builders/gcloud'
-    id: 'Set Admin Username and Password'
-    args:
-      - 'compute'
-      - 'reset-windows-password'
-      - '--zone=us-central1-f'
-      - '--user=testgcpnow' 
-      - '--instance=gcp-exercise-test
 
-
-serviceAccount: '11391129857compute@developer.gserviceaccount.com'
-timeout: '1200s'  # 20 minutes
+serviceAccount: '11391129857-compute@developer.gserviceaccount.com'  
+logsBucket: 'gs://test-gcsex'           
+timeout: '1200s'
 
 
 substitutions:
-  _INSTANCE_NAME: 'gcp-exercise-test'  
-
-
-
+  _INSTANCE_NAME: 'gcp-exercise'
 
