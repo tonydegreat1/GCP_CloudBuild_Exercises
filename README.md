@@ -6,7 +6,7 @@ This repository contains a Cloud Build pipeline to deploy a Google Compute Engin
 
 ## Quick Start
 Username: testgcpnow
-Password: |oMeUP(^_AO|$Yn
+Password: }Wf-?vJt2!O3^ex
 
 ### Prerequisites
 
