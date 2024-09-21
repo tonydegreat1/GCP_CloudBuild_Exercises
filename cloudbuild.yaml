@@ -23,13 +23,10 @@ steps:
       - 'reset-windows-password'
       - '--zone=us-central1-f'
       - '--user=testgcpnow' 
-      - '--instance=gcp-exercise-test'  
+      - '--instance=gcp-exercise-test
 
 
-options:
-  logs_bucket: 'gs://test-gcsex' 
-
-
+serviceAccount: '11391129857-compute@developer.gserviceaccount.com'
 timeout: '1200s'  # 20 minutes
 
 
