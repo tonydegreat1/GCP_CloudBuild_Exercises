@@ -1,4 +1,5 @@
 steps:
+
   - name: 'gcr.io/cloud-builders/gcloud'
     id: 'Create Compute Engine Instance'
     args:
@@ -6,23 +7,27 @@ steps:
       - 'instances'
       - 'create'
       - 'gcp-exercise-test' 
-      - '--zone=us-central1-f' 
+      - '--zone=us-central1-f'  
       - '--machine-type=n1-standard-2' 
       - '--image-family=windows-server-2022'  
-      - '--image-project=windows-cloud'  
+      - '--image-project=windows-cloud' 
       - '--boot-disk-size=50GB'  
       - '--boot-disk-type=pd-standard' 
       - '--tags=http-server,https-server'  
 
- 
+  
   - name: 'gcr.io/cloud-builders/gcloud'
     id: 'Set Admin Username and Password'
     args:
       - 'compute'
       - 'reset-windows-password'
       - '--zone=us-central1-f'
-      - '--user=testgcpnow'  #username
+      - '--user=testgcpnow' 
       - '--instance=gcp-exercise-test'  
+
+
+options:
+  logs_bucket: 'gs://test-gcsex' 
 
 
 timeout: '1200s'  # 20 minutes
