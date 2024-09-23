@@ -6,7 +6,7 @@ steps:
       - 'compute'
       - 'instances'
       - 'create'
-      - 'gcp-exercise'          
+      - 'gcp-exercise1'          
       - '--zone=us-central1-a'         
       - '--machine-type=n1-standard-2'  
       - '--image-family=windows-2019'   
@@ -23,5 +23,5 @@ timeout: '1200s'
 
 
 substitutions:
-  _INSTANCE_NAME: 'gcp-exercise'
+  _INSTANCE_NAME: 'gcp-exercise1'
 
