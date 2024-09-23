@@ -1,3 +1,4 @@
+
 steps:
   
   - name: 'gcr.io/cloud-builders/gcloud'
@@ -6,8 +7,8 @@ steps:
       - 'compute'
       - 'instances'
       - 'create'
-      - 'gcp-exercise1'          
-      - '--zone=us-central1-b'         
+      - 'gcp-test-exercise'          
+      - '--zone=us-central1-f'         
       - '--machine-type=n1-standard-1'  
       - '--image-family=windows-2019'   
       - '--image-project=windows-cloud' 
@@ -23,5 +24,5 @@ timeout: '1200s'
 
 
 substitutions:
-  _INSTANCE_NAME: 'gcp-exercise1'
+  _INSTANCE_NAME: 'gcp-test-exercise'
 
