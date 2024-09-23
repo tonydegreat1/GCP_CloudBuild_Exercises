@@ -8,7 +8,7 @@ steps:
       - 'create'
       - 'gcp-exercise1'          
       - '--zone=us-central1-b'         
-      - '--machine-type=n1-standard-2'  
+      - '--machine-type=n1-standard-1'  
       - '--image-family=windows-2019'   
       - '--image-project=windows-cloud' 
       - '--boot-disk-size=50GB'         
